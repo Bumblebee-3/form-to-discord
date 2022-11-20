@@ -1,11 +1,17 @@
 const express = require("express");
 const app = express();
-const aoijs = require("aoi.js")
-const yourUserId="818377414367379487";
+const aoijs = require("aoi.js");
+
+const config = {
+  token:process.env.token,
+  prefix:"!",
+  port:3000,
+  yourUserId:"818377414367379487"
+}
 
 const bot = new aoijs.AoiClient({
-  token: process.env.token,
-  prefix: "!",
+  token: process.env.token || config.token,
+  prefix: config.prefix || "!",
   intents: ["GUILDS", "GUILD_MESSAGES"]
 })
 bot.onMessage()
@@ -25,7 +31,7 @@ code: `
   $title[1;$eventData[[0]] Sent you a message from your website.]
   $description[1;$eventData[[1]]]
   $color[1;RANDOM]
-  $dm[${yourUserId}]`
+  $dm[${config.yourUserId}]`
 })
 event.listen("message")
 
@@ -47,6 +53,6 @@ app.get("/pic.png",(req,res)=>{
   res.sendFile(__dirname + '/views/user.png');
 })
 
-app.listen(3000, () => {
+app.listen(config.port, () => {
   console.log('server started');
 });
