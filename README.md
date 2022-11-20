@@ -3,8 +3,8 @@
 ### Setup:
 #### Packages Required:
 ```diff
-+ 
-- 
++ aoi.js
+- express
 ```
 
 #### In Index.js, fill up config
