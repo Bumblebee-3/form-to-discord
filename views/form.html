@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<title>Form To Discord</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body class=" w3-black w3-center">
+
+<div class="w3-container w3-black">
+  <h2>Form To Discord!</h2>
+  <p>Your answers will go straight to the server of the owner of this form!</p>
+  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-orange w3-large">Fill it!</button>
+
+  <div id="id01" class="w3-modal ">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom w3-orange" style="max-width:600px">
+
+      <div class="w3-center"><br>
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+        <img src="pic.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+      </div>
+
+      <form class="w3-container" action="/submit" method="GET">
+        <div class="w3-section">
+          <label><b>Discord Username:</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required >
+          <label><b>Message</b></label>
+          <input class="w3-input w3-border" type="text" placeholder="Enter Message" name="msg" required>
+          <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Submit!</button>
+        </div>
+      </form>
+
+      <div class="w3-container w3-border-top w3-padding-16 w3-purple">
+        <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+        
+      </div>
+
+    </div>
+  </div>
+</div>
+            
+</body>
+</html>
