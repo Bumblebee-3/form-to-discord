@@ -2,9 +2,9 @@
 ## Let Users send messages from your website to your github DMs
 ### Setup:
 #### Packages Required:
-```diff
+```
 + aoi.js
-- express
++ express
 ```
 
 #### In Index.js, fill up config
